@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start" >
+      <ion-back-button color="light" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scrollY="false">
+  <ion-row>
+    <ion-col>
+      <img src="../../assets/ALFestival_logo_2024.png">
+    </ion-col>
+  </ion-row>
+  <ion-card >
+    <ion-card-content>
+      <form (ngSubmit)="createAccount()" [formGroup]="credentials">
+        <ion-item>
+          <ion-label color="light" position="stacked">Uw Email</ion-label>
+          <ion-input color="light" type="email" inputmode="email" placeholder="Email" formControlName="email"></ion-input>
+          <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Gelieve een werkend emailadres te geven</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label color="light" position="stacked">Paswoord</ion-label>
+          <ion-input color="light" type="password" placeholder="Paswoord" formControlName="password"></ion-input>
+          <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors?.required">Gelieve een paswoord in te geven</ion-note>
+          <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors?.minlength">Minlength 6 characters</ion-note>
+        </ion-item>
+        <ion-button type="submit" expand="block" fill="outline" strong="true" [disabled]="!credentials.valid">Maak mijn account</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

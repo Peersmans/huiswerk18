@@ -1,0 +1,23 @@
+ion-header {
+  --ion-background-color: rgb(9, 9, 67);
+}
+ion-content {
+
+  --padding-start: 5%;
+  --padding-end: 5%;
+  --background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+    url("../../../assets/Scherm­afbeelding\ 2024-01-25\ om\ 14.16.00.png") 0 0/100% 100%
+      no-repeat;
+
+}
+
+ion-card {
+  --ion-background-color: transparent;
+}
+.form {
+  --ion-background: none;
+  margin-top: 25%;
+}
+ion-label {
+  color: azure;
+}
